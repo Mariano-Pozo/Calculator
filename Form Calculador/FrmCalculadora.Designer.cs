@@ -41,7 +41,6 @@
             btnCerrar = new Button();
             txtPrimerOperador = new TextBox();
             txtSegundoOperador = new TextBox();
-            panel1 = new Panel();
             grpSistema.SuspendLayout();
             SuspendLayout();
             // 
@@ -101,7 +100,6 @@
             lblResultado.Size = new Size(237, 59);
             lblResultado.TabIndex = 0;
             lblResultado.Text = "Resultado:";
-            lblResultado.Click += label1_Click;
             // 
             // lblPrimerOperador
             // 
@@ -112,7 +110,7 @@
             lblPrimerOperador.Size = new Size(142, 21);
             lblPrimerOperador.TabIndex = 3;
             lblPrimerOperador.Text = "Primer Operador:";
-            lblPrimerOperador.Click += label2_Click;
+            lblPrimerOperador.Click += lblPrimerOperador_Click;
             // 
             // lblOperacion
             // 
@@ -123,7 +121,6 @@
             lblOperacion.Size = new Size(93, 21);
             lblOperacion.TabIndex = 4;
             lblOperacion.Text = "Operacion:";
-            lblOperacion.Click += label3_Click;
             // 
             // lblSegundoOperador
             // 
@@ -134,7 +131,6 @@
             lblSegundoOperador.Size = new Size(159, 21);
             lblSegundoOperador.TabIndex = 5;
             lblSegundoOperador.Text = "Segundo Operador:";
-            lblSegundoOperador.Click += label4_Click;
             // 
             // btnOperar
             // 
@@ -144,7 +140,7 @@
             btnOperar.TabIndex = 9;
             btnOperar.Text = "Operar";
             btnOperar.UseVisualStyleBackColor = true;
-            btnOperar.Click += btnOperar_Click;
+            btnOperar.Click += btnOperar_Click_1;
             // 
             // btnLimpiar
             // 
@@ -182,21 +178,11 @@
             txtSegundoOperador.TabIndex = 8;
             txtSegundoOperador.TextChanged += txtSegundoOperador_TextChanged;
             // 
-            // panel1
-            // 
-            panel1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
-            panel1.Location = new Point(290, 62);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(206, 117);
-            panel1.TabIndex = 1;
-            panel1.Paint += setResultado;
-            // 
             // FrmCalculadora
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(panel1);
             Controls.Add(txtSegundoOperador);
             Controls.Add(txtPrimerOperador);
             Controls.Add(btnCerrar);
@@ -213,7 +199,6 @@
             MinimizeBox = false;
             Name = "FrmCalculadora";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Calculadora de Mariano Pozo";
             FormClosing += FrmCalculadora_FormClosing;
             Load += FrmCalculadora_Load;
             grpSistema.ResumeLayout(false);
@@ -237,6 +222,5 @@
         private Button btnCerrar;
         private TextBox txtPrimerOperador;
         private TextBox txtSegundoOperador;
-        private Panel panel1;
     }
 }

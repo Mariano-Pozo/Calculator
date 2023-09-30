@@ -126,6 +126,7 @@ namespace Entidades
         • Un Sistema y una Numeración serán iguales, si el sistema es igual a sistema de la
         numeración;
         • Los operadores realizarán las operaciones correspondientes entre dos números.*/
+        //ver sobrecarga.
         public static bool operator == (Esistema sistema, Numeracion num)
         {
             return sistema == num.Sistema;
@@ -140,7 +141,7 @@ namespace Entidades
         }
         public static bool operator !=(Numeracion primerNumeracion, Numeracion segundaNumeracion)
         {
-            return !(primerNumeracion.sistema == segundaNumeracion.sistema);
+            return !(primerNumeracion == segundaNumeracion);
         }
         public static Numeracion operator +(Numeracion primerNumero, Numeracion segundoNumero)
         {
