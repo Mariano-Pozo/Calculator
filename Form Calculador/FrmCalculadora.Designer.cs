@@ -169,6 +169,7 @@
             txtPrimerOperador.Size = new Size(142, 23);
             txtPrimerOperador.TabIndex = 6;
             txtPrimerOperador.TextChanged += txtPrimerOperador_TextChanged;
+            txtPrimerOperador.KeyPress += txtPrimerOperador_KeyPress;
             // 
             // txtSegundoOperador
             // 
@@ -199,6 +200,7 @@
             MinimizeBox = false;
             Name = "FrmCalculadora";
             StartPosition = FormStartPosition.CenterScreen;
+            Text = "Calculadora de Mariano Pozo";
             FormClosing += FrmCalculadora_FormClosing;
             Load += FrmCalculadora_Load;
             grpSistema.ResumeLayout(false);

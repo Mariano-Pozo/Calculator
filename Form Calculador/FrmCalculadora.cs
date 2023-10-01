@@ -24,12 +24,7 @@ namespace Form_Calculador
             this.operadorSeleccionado = "+";
 
         }
-        //hacer limpieza de metodos del form
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -37,7 +32,15 @@ namespace Form_Calculador
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            //noborrar
+            var operacion = cmbOperacion.SelectedItem.ToString();
+            if (operacion != string.Empty)
+            {
+                operadorSeleccionado = operacion;
+            }
+            else
+            {
+                operadorSeleccionado = "+";
+            }
         }
 
         private void FrmCalculadora_FormClosing(object sender, FormClosingEventArgs e) // no funciona actualizar
@@ -71,12 +74,6 @@ namespace Form_Calculador
 
         }
 
-        private void btnOperar_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
         private void FrmCalculadora_Load(object sender, EventArgs e)
         {
             //aqui nada
@@ -104,10 +101,6 @@ namespace Form_Calculador
             segundoOperando = new Numeracion(txtSegundoOperador.Text, Esistema.Decimal);
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         private void setResultado()
         //??
         {
@@ -146,9 +139,16 @@ namespace Form_Calculador
             //asignar resultado al label con set resultado
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void txtPrimerOperador_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -8,7 +8,6 @@ namespace Entidades
     {
         private double valorNumerico;
         private Esistema sistema;
-        
         //cc
         public Numeracion(double valor,Esistema sistema):this(valor.ToString(),sistema)
         {   
@@ -18,8 +17,6 @@ namespace Entidades
             InicializarValores(valor,sistema);
         }
         
-
-
         public Esistema Sistema
         { 
             get 
@@ -121,6 +118,7 @@ namespace Entidades
             {
                 return valorNumerico.ToString();
             }
+            
         }
         /*Dos numeraciones serán iguales si pertenecen al mismo sistema.
         • Un Sistema y una Numeración serán iguales, si el sistema es igual a sistema de la
